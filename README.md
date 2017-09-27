@@ -8,4 +8,6 @@ $ ./build-docker-image.sh
 ```
 
 ### 2.2 执行docker collect 进程
+```
 $ docker run -d -v /var/run/docker.sock:/var/run/docker.sock --oom-score-adj=-500 --name docker-collect --net host --restart always docker-collectd:latest /docker-collect  -graphite_url="graphite-host-ip:2003" -stderrthreshold="INFO" -interval=30 -hostname="主机ip地址" -logtostderr
+```
